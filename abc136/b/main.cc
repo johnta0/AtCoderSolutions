@@ -8,6 +8,10 @@ using namespace std;
 
 int main()
 {
+    /*
+        桁数を数えるのに大小関係を調べたが、文字列の長さを調べれば
+        もっとシンプルに書ける。
+     */
     int n;
     cin >> n;
 
