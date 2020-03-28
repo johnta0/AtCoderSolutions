@@ -20,3 +20,16 @@ def inp(): return int(sys.stdin.readline())
 def inp_list(): return list(map(int, sys.stdin.readline().split()))
 
 def lcm(x, y): return (x * y) // gcd(x, y)
+
+
+K, N = inp_list()
+A = inp_list()
+
+max_dist = 0
+for i in range(N):
+    if i == N - 1:
+        max_dist = max(max_dist, A[0] + K - A[i])
+    else:
+        max_dist = max(max_dist, A[i + 1] - A[i])
+
+print(K - max_dist)

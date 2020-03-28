@@ -15,8 +15,20 @@ INF = float('inf')
 mod = 10**9+7
 eps = 10**-7
 
+
 def inp(): return int(sys.stdin.readline())
- 
+
+
 def inp_list(): return list(map(int, sys.stdin.readline().split()))
 
+
 def lcm(x, y): return (x * y) // gcd(x, y)
+
+
+X = inp()
+
+cnt_1000 = X // 500
+X -= cnt_1000 * 500
+
+cnt_5 = X // 5
+print(1000 * cnt_1000 + 5 * cnt_5)
