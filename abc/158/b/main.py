@@ -21,3 +21,11 @@ def inp(): return int(sys.stdin.readline())
 def inp_list(): return list(map(int, sys.stdin.readline().split()))
 
 def lcm(x, y): return (x * y) // gcd(x, y)
+
+
+n, a, b = inp_list()
+q = n // (a + b)
+n -= q * (a + b)
+
+ans = q * a + min(a, n)
+print(ans)

@@ -8,7 +8,7 @@ import string
 import queue
 import copy
 import time
-# import numpy as np
+import numpy as np
 from fractions import gcd
 
 sys.setrecursionlimit(10**8)
@@ -21,3 +21,13 @@ def inp(): return int(sys.stdin.readline())
 def inp_list(): return list(map(int, sys.stdin.readline().split()))
 
 def lcm(x, y): return (x * y) // gcd(x, y)
+
+
+a, b = inp_list()
+for n in range(1251):
+    wo_tax_a = int(n * 0.08)
+    wo_tax_b = int(n * 0.10)
+    if wo_tax_a == a and wo_tax_b == b:
+        print(n)
+        exit()
+print(-1)

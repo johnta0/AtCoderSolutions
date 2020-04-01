@@ -8,7 +8,6 @@ import string
 import queue
 import copy
 import time
-# import numpy as np
 from fractions import gcd
 
 sys.setrecursionlimit(10**8)
@@ -21,3 +20,10 @@ def inp(): return int(sys.stdin.readline())
 def inp_list(): return list(map(int, sys.stdin.readline().split()))
 
 def lcm(x, y): return (x * y) // gcd(x, y)
+
+
+N, X, Y = inp_list()
+
+# BFS
+
+
