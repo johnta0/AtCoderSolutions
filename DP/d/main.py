@@ -8,7 +8,7 @@ import string
 import queue
 import copy
 import time
-import numpy as np
+# import numpy as np
 from fractions import gcd
 
 sys.setrecursionlimit(10**8)
@@ -17,19 +17,23 @@ mod = 10**9+7
 eps = 10**-7
 
 def inp(): return int(sys.stdin.readline())
- 
+
+
 def inp_list(): return list(map(int, sys.stdin.readline().split()))
+
 
 def lcm(x, y): return (x * y) // gcd(x, y)
 
 
 N, W = inp_list()
-weight = np.array([0] * N)
-value = np.array([0] * N)
-for i in range(N): weight[i], value[i] = inp_list()
+weight = [0] * N  # np.array([0] * N)
+value = [0] * N  # np.array([0] * N)
+for i in range(N):
+    weight[i], value[i] = inp_list()
 
 # dp[i + 1][w] : i番目までの品物の中から重さがwを超えないように選んだときの価値の和の最大値
-dp = np.zeros((N + 1, W + 1), dtype=int)  # w = 0, 1, ..., W
+# dp = np.zeros((N + 1, W + 1), dtype=int)  # w = 0, 1, ..., W
+dp = [[0] * N + 1]
 # dp[0] = [0, 0, ..., 0]
 # print(dp)
 

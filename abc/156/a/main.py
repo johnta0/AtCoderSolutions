@@ -23,5 +23,10 @@ def inp_list(): return list(map(int, sys.stdin.readline().split()))
 def lcm(x, y): return (x * y) // gcd(x, y)
 
 
-X, Y, Z = inp_list()
-print(Z, X, Y)
+N, R = inp_list()
+I = 0
+if N >= 10:
+    I = R
+else:
+    I = R + 100 * (10 - N)
+print(I)
