@@ -1,6 +1,6 @@
+#include <algorithm>
 #include <iostream>
 #include <vector>
-#include <algorithm>
 
 using namespace std;
 
@@ -11,10 +11,12 @@ using namespace std;
 //     cout << endl;
 // }
 
-int main () {
-    int N; cin >> N;
+int main() {
+    int N;
+    cin >> N;
     vector<int> d(N);
-    for (int i = 0; i < N; ++i) cin >> d.at(i);
+    for(int i = 0; i < N; ++i)
+        cin >> d.at(i);
 
     // 同じ大きさの鏡餅は複数あっても意味がない => 重複は除く
     sort(d.begin(), d.end());

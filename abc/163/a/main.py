@@ -15,3 +15,7 @@ def inp(): return int(sys.stdin.readline())
 def inp_list(): return list(map(int, sys.stdin.readline().split()))
 
 def lcm(x, y): return (x * y) // gcd(x, y)
+
+R = inp()
+print(math.pi * 2 * R)
+
