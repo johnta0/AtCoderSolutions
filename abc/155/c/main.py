@@ -1,17 +1,21 @@
 N = int(input())
-S = [''] * N
-for i in range(N):
-    S[i] = input()
+ss = []
+for _ in range(N): ss.append(input())
 
-words = []
-nums = []
-for i in range(N):
-    if S[i] not in words:
-        words += S[i]
-        nums += 1
-    else:
-        nunms[words.index(S[i])] += 1
+from collections import Counter
 
-for w in max_k_list:
-    print(w)
+ctr = Counter(ss)
+counted = ctr.most_common()
+# print(counted)
+ans = []
+for i in range(len(counted)):
+    tup = counted[i]
+    if i == 0:
+        ans.append(tup[0])
+        continue
+    if counted[i][1] != counted[i - 1][1]:
+        break
+    ans.append(tup[0])
 
+ans.sort()
+for a in ans: print(a)
