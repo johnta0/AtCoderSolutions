@@ -1,28 +1,24 @@
 
-# def is_prime(n):
 
+def generate_prime_list(n):
+    li = list(range(2, n))
+    pos = 0
 
-def create_prime_list(n):
-    prime_list = [i for i in range(2, n - 1)]
-    cnt = 0
-    while True:
-        p = prime_list[cnt]
-        for i in range(len(prime_list)):
-            num = prime_list[i]
-            if num == p: continue
-            if num % p == 0:
-                prime_list.pop(i)
-    return prime_list
+def is_prime(n):
+    # n が素数である <=> k = 2, ..., n - 1 で n が割り切れない。
+    prime_list = generate_prime_list(n)
+    for k in prime_list:
+        if n % k == 0:
+            return False
+    return True
 
-n = 2
-while n < 100:
-    # n が素数かどうか
-    prime_list = create_prime_list(n)
-    is_prime = True
-    for a in prime_list:
-        if n % a == 0:
-            is_prime = False
-            break
-    if is_prime: print(n)
-    
-    n += 1
+if __name__ == "__main__":
+    MAX = 100
+    num = 2
+    # count = 0
+    while num <= MAX:
+        if is_prime(num):
+            print(num)
+            # count += 1
+        num += 1
+    # print(count)

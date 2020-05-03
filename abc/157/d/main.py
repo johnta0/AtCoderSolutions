@@ -50,36 +50,17 @@ class UnionFind():
 
 
 # input
+
+# N: 人数, M: 友人関係の数, K: ブロック関係の数
 N, M, K = map(int, input().split())
-# A = [0] * M
-# B = [0] * M
-# for i in range(M): A[i], B[i] = map(int, input().split())
-# C = [0] * K
-# D = [0] * K
-# for i in range(K): C[i], D[i] = map(int, input().split())
 
-uf = UnionFind(N)
-
-f_relation = [[] for _ in range(N)]
-for _ in range(M):
-    a, b = map(int, input().split())
-    f_relation[a - 1].append(b - 1)
-    f_relation[b - 1].append(a - 1)
-    uf.unite(a - 1, b - 1)
-
-b_relation = [[] for _ in range(N)]
-for _ in range(K):
-    c, d = map(int, input().split())
-    b_relation[c - 1].append(d - 1)
-    b_relation[d - 1].append(c - 1)
-
-# ans: 1, 2, ..., N の人それぞれに対して、友達候補の数
-ans = [0 for _ in range(N)]
-for i in range(N):
-    # i の友達候補（ブロックは考えない） = i と同じグループ（間接的でもつながっている） - 
+# A_i, B_i は友達関係, C_i, D_i はブロック関係
+friend_rel = []
+/
+block_rel = []
+for _ in range(K): block_rel.append(list(map(int, input().split())))
 
 # main process
-
 """
     友達候補 (a, b)：
         - a \ne b
@@ -87,5 +68,8 @@ for i in range(N):
         - a, b は友達関係でもない
         - 間接的に友達関係である
 """
+
+## DFS/BFS を用いてグループ分け（連結成分）していく手法
+
 
 
