@@ -1,5 +1,4 @@
 from collections import  deque
-import sys
 import bisect
 import math
 import itertools
@@ -9,6 +8,8 @@ from math import gcd
 INF = float('inf')
 mod = 10**9+7
 eps = 10**-7
+
+import sys
 
 def inp(): return int(sys.stdin.readline())
  
