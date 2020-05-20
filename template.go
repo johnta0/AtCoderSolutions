@@ -12,14 +12,14 @@ func main() {
 	
 }
 
-func Max(a, b int) int {
+func max(a, b int) int {
 	if a > b {
 		return a
 	}
 	return b
 }
  
-func MaxInts(n ...int) int {
+func maxInts(n ...int) int {
 	max := n[0]
 	for _, v := range n[1:] {
 		if v > max {
